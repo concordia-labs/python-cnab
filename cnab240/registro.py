@@ -34,9 +34,11 @@ class CampoBase(object):
     def valor(self, valor):
 
         if self.formato == 'alfa':
-            if not isinstance(valor, str):
-                print("{0} - {1}".format(self.nome, valor))
-                raise errors.TipoError(self, valor)
+            # TODO: Find a better way to handle this
+            valor = str(valor)
+            # if not isinstance(valor, str):
+                # print("{0} - {1}".format(self.nome, valor))
+                # raise errors.TipoError(self, valor)
 
             valor = self._normalize_str(valor)
 
